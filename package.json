@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/federicomaffei/.com",
   "dependencies": {
-    "hapi": "^8.4.0"
+    "hapi": "^8.4.0",
+    "jade": "^1.9.2"
   }
 }
