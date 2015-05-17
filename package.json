@@ -1,0 +1,22 @@
+{
+  "name": "federicomaffei.com",
+  "version": "1.0.0",
+  "description": "my website",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --reporter spec --recursive --timeout 20s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/federicomaffei/.com.git"
+  },
+  "author": "federico.maffei@gmail.com",
+  "license": "No License",
+  "bugs": {
+    "url": "https://github.com/federicomaffei/.com/issues"
+  },
+  "homepage": "https://github.com/federicomaffei/.com",
+  "dependencies": {
+    "hapi": "^8.4.0"
+  }
+}
