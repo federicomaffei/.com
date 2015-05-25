@@ -21,7 +21,7 @@ var server = new Hapi.Server({
 });
 
 server.connection({
-    port: process.env.PORT || 3000
+    port: process.env.OPENSHIFT_NODEJS_PORT || 3000
 });
 
 server.views({
