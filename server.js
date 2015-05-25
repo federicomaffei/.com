@@ -1,3 +1,5 @@
+'use strict';
+
 var Hapi = require('hapi'),
     Path = require('path');
 
@@ -32,8 +34,8 @@ server.views({
         }
     },
     context: {},
-    path: __dirname + '/src/views',
-    layoutPath: __dirname + '/src/views/layout'
+    path: Path.join(__dirname, '/src/views'),
+    layoutPath: Path.join(__dirname, '/src/views/layout')
 });
 
 server.register([
@@ -44,11 +46,11 @@ server.register([
         }
     }
 ], function(registerError) {
-    if (registerError) {
+    if(registerError) {
         console.error('Failed to load plugin:', registerError);
     }
 
-    server.start(function () {
+    server.start(function() {
         console.log('Server running at:', server.info.uri);
     });
 });
