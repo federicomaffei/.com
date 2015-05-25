@@ -4,7 +4,7 @@
   "description": "my website",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node dev.js",
     "test": "mocha --reporter spec --recursive --timeout 20s"
   },
   "engines": {
@@ -21,7 +21,11 @@
   },
   "homepage": "https://github.com/federicomaffei/.com",
   "dependencies": {
-    "hapi": "^8.4.0",
-    "jade": "^1.9.2"
+    "hapi": "8.4.0",
+    "hapi-plug-routes": "^1.0.0",
+    "jade": "1.9.2"
+  },
+  "devDependencies": {
+    "forever-monitor": "1.5.2"
   }
 }

@@ -36,14 +36,19 @@ server.views({
     layoutPath: __dirname + '/src/views/layout'
 });
 
-server.route({
-    method: 'GET',
-    path:'/',
-    handler: function (request, reply) {
-        reply.view('index');
+server.register([
+    {
+        register: require('hapi-plug-routes'),
+        options: {
+            directory: '/src/routes/'
+        }
     }
-});
+], function(registerError) {
+    if (registerError) {
+        console.error('Failed to load plugin:', registerError);
+    }
 
-server.start(function () {
-    console.log('Server running at:', server.info.uri);
+    server.start(function () {
+        console.log('Server running at:', server.info.uri);
+    });
 });
