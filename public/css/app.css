@@ -16,3 +16,13 @@ html, button, input, select, textarea,
     font-family: 'Roboto', sans-serif;
     font-size: 1.4em
 }
+
+a.link {
+   padding: 0 10px 0 10px;
+}
+
+:link { color: #000000; }
+
+:visited { color: #000000; }
+
+a:hover { color: #3c510c; }
