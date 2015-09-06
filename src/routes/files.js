@@ -40,7 +40,7 @@ module.exports = [
     },
     {
         method: 'GET',
-        path: '/js/{path*}',
+        path: '/dist/{path*}',
         handler: {
             directory: {
                 path: './js'

@@ -1,0 +1,1 @@
+var phrases=["developer","junior engineer at OpenTable","italian","football fan","loves cycling"],i=0;document.getElementById("descriptor").innerHTML=phrases[i],i++,setInterval(function(){i<phrases.length-1?(document.getElementById("descriptor").innerHTML=phrases[i],i++):(document.getElementById("descriptor").innerHTML=phrases[i],i=0)},5e3);
