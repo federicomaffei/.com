@@ -1,7 +1,8 @@
 'use strict';
 
 var Hapi = require('hapi'),
-    Path = require('path');
+    Path = require('path'),
+    Inert = require('inert');
 
 var server = new Hapi.Server({
     connections: {
@@ -27,30 +28,33 @@ server.connection({
     port: process.env.OPENSHIFT_NODEJS_PORT || 3000
 });
 
-server.views({
-    engines: {
-        jade: {
-            module: require('jade')
+server.register(Inert, function () {
+    server.register([
+        {
+            register: require('vision')
+        },
+        {
+            register: require('hapi-plug-routes')
         }
-    },
-    context: {},
-    path: Path.join(__dirname, '/src/views'),
-    layoutPath: Path.join(__dirname, '/src/views/layout')
-});
-
-server.register([
-    {
-        register: require('hapi-plug-routes'),
-        options: {
-            directory: '/src/routes/'
+    ], function(registerError) {
+        if(registerError) {
+            console.error('Failed to load plugin:', registerError);
         }
-    }
-], function(registerError) {
-    if(registerError) {
-        console.error('Failed to load plugin:', registerError);
-    }
 
-    server.start(function() {
-        console.log('Server running at:', server.info.uri);
+        server.views({
+            engines: {
+                jade: {
+                    module: require('jade')
+                }
+            },
+            context: {},
+            path: Path.join(__dirname, '/src/views'),
+            layoutPath: Path.join(__dirname, '/src/views/layout')
+        });
+
+        server.start(function() {
+            console.log('Server running at:', server.info.uri);
+        });
     });
 });
+
