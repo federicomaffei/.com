@@ -1,9 +1,8 @@
 var phrases = [
-    'developer',
-    'junior engineer at OpenTable',
-    'italian',
+    'software engineer at OpenTable',
+    'italian living in London',
     'football fan',
-    'loves cycling'
+    'cycling aficionado'
     ],
     i = 0;
 
