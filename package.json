@@ -8,7 +8,7 @@
     "test": "mocha --reporter spec --recursive --timeout 20s"
   },
   "engines": {
-    "node": "4.0.0"
+    "node": "6.12.2"
   },
   "repository": {
     "type": "git",
